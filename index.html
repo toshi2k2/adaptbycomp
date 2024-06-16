@@ -158,7 +158,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract (Unsupervised Domain Adaptation for Image Classification) - CVPR'24</h2>
+        <h2 class="title is-3">A Bayesian Approach to OOD Robustness in Image Classification</h2>
         <div class="content has-text-justified">
           <p>
             An important and unsolved problem in computer vision is to ensure that the algorithms are robust to changes in image domains. We address this problem in the scenario where we have access to images from the target domains but no annotations. Motivated by the challenges of the OOD-CV benchmark where we encounter real world Out-of-Domain (OOD) nuisances and occlusion, we introduce a novel Bayesian approach to OOD robustness for object classification. Our work extends Compositional Neural Networks (CompNets), which have been shown to be robust to occlusion but degrade badly when tested on OOD data. We exploit the fact that CompNets contain a generative head defined over feature vectors represented by von Mises-Fisher (vMF) kernels, which correspond roughly to object parts, and can be learned without supervision. We obverse that some vMF kernels are similar between different domains, while others are not. This enables us to learn a transitional dictionary of vMF kernels that are intermediate between the source and target domains and train the generative model on this dictionary using the annotations on the source domain, followed by iterative refinement. This approach, termed Unsupervised Generative Transition (UGT), performs very well in OOD scenarios even when occlusion is present. UGT is evaluated on different OOD benchmarks including the OOD-CV dataset, several popular datasets (e.g., ImageNet-C [9]), artificial image corruptions (including adding occluders), and synthetic-to-real domain transfer, and does well in all scenarios outperforming SOTA alternatives (e.g. up to 10% top-1 accuracy on Occluded OOD-CV dataset). 
@@ -247,37 +247,96 @@
 <!--End BibTex citation -->
 
 
-<!-- Video carousel -->
+<!-- Paper abstract PoseUDA -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Source-Free and Image-Only Unsupervised Domain Adaptation for Category Level Object Pose Estimation</h2>
+        <div class="content has-text-justified">
+          <p>
+            We consider the problem of source-free unsupervised category-level pose estimation from only RGB images to a target domain without any access to source domain data or 3D annotations during adaptation. Collecting and annotating real-world 3D data and corresponding images is laborious, expensive, yet unavoidable process, since even 3D pose domain adaptation methods require 3D data in the target domain. We introduce 3DUDA, a method capable of adapting to a nuisance-ridden target domain without 3D or depth data. Our key insight stems from the observation that specific object subparts remain stable across out-of-domain (OOD) scenarios, enabling strategic utilization of these invariant subcomponents for effective model updates. We represent object categories as simple cuboid meshes, and harness a generative model of neural feature activations modeled at each mesh vertex learnt using differential rendering. We focus on individual locally robust mesh vertex features and iteratively update them based on their proximity to corresponding features in the target domain even when the global pose is not correct. Our model is then trained in an EM fashion, alternating between updating the vertex features and the feature extractor. We show that our method simulates fine-tuning on a global pseudo-labeled dataset under mild assumptions, which converges to the target domain asymptotically. Through extensive empirical validation, including a complex extreme UDA setup which combines real nuisances, synthetic noise, and occlusion, we demonstrate the potency of our simple approach in addressing the domain shift challenge and significantly improving pose estimation accuracy. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
 <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/3duda1.png" alt="3DUDAIntuition"/>
+        <h2 class="subtitle has-text-centered">
+          Qualitative Results of Our Method.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/3duda2.png" alt="3DUDA"/>
+        <h2 class="subtitle has-text-centered">
+          Our method utilizes two key observations- (a) Local Pose Ambiguity, i.e. the inherent pose ambiguity that occurs when we can only see a part of the object. We utilize this ambiguity to update the local vertex features which roughly correspond to object parts, even when the global pose of the object may be incorrectly estimated. (b) Local Part Robustness refers to the fact that certain parts (e.g. headlights in a car) are less affected in OOD data, which is verified by the (azimuth) polar histogram representing the percentage of robustly detected vertex features per image in target domain using the source model. Even before adaptation, there are a few vertices which can be detected robustly and therefore are leveraged by our method to adapt to the target domain as seen by the increased robust vertex ratio After Adaptation.
+        </h2>
+      </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- poster -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/3dudaposter.png" alt="3DUDAposter"/>
+        <h2 class="subtitle has-text-centered">
+          3DUDA.
+        </h2>
+      </div>
+</div>
+</div>
+</section>
+<!-- poster -->
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
+          <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
+            <!-- <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
+          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
+            <!-- <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
+            <!-- <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -285,26 +344,18 @@
 
 
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@inproceedings{
+        kaushik2024sourcefree,
+        title={Source-Free and Image-Only Unsupervised Domain Adaptation for Category Level Object Pose Estimation},
+        author={Prakhar Kaushik and Aayush Mishra and Adam Kortylewski and Alan Yuille},
+        booktitle={The Twelfth International Conference on Learning Representations},
+        year={2024},
+        url={https://openreview.net/forum?id=UPvufoBAIs}}
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
